@@ -7,8 +7,7 @@ amount = float(input("Enter currency amount: "))
 # Step 2: Ask the user to select the source and target currencies
 # Use the input() function to get the user's choice and store it in a variable
 sta_curr = input("Enter the source and target currensies (e.g., USD to EUR): ")
-cur1 = sta_curr.split().pop(0)
-cur2 = sta_curr.split().pop()
+source_currency, to, target_currency = sta_curr.strip().split()
 
 # Step 3: Retrieve the current exchange rate from a predefined dictionary
 # Use a dictionary to store exchange rates (e.g., {'USD to EUR': 0.85, ...})
@@ -27,4 +26,4 @@ re_rate = exch_rate[sta_curr]
 # Step 4: Perform the currency conversion and display the converted amount
 # Use the exchange rate to convert the amount and print the result
 conv_amount = amount * re_rate
-print(f"{amount} {cur1} is {conv_amount} {cur2}")
+print(f"{amount} {source_currency} is {conv_amount} {target_currency}")
