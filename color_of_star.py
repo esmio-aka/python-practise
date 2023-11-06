@@ -26,8 +26,7 @@ def which_color_is_star(dict):
         'Red': []
         }
 
-    for i in dict.items():
-        str, temp = i
+    for str, temp in dict.items():
         if temp in range(2000, 3600+1):
             color_stars_dict['Red'].append(str)
         elif temp in range(3600, 5000+1):
@@ -44,8 +43,7 @@ def which_color_is_star(dict):
 
 def print_color_stars(dict):
 
-    for i in dict.items():
-        color, str_list = i
+    for color, str_list in dict.items():
         print(f'{color} stars: {", ".join(str_list)}')
 
 color_stars_dict = which_color_is_star(stars_dict)
